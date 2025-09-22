@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import Header from '../Header/Header';
+import MainNews from '../MainNews/MainNews';
 // import MainNews from '../MainNews/MainNews';
 // import styles from './styles';
 const HomeScreen = () => {
