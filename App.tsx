@@ -38,3 +38,13 @@ export default App;
 
 
 // npx react-native start --reset-cache
+// npx react-native start
+// adb devices
+// adb reverse tcp:8081 tcp:8081
+// npx react-native run-android
+
+//نوقف الشحن
+// adb shell dumpsys battery set ac 0
+// adb shell dumpsys battery set usb 0
+// adb shell dumpsys battery set wireless 0
+// adb shell dumpsys battery set status 1
