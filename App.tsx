@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
 
 export default App;
 
-
+//cd /d f:\MyProjects\InfoApp
 // npx react-native start --reset-cache
 // npx react-native start
 // adb devices
