@@ -2,8 +2,8 @@ import { View, Text, Image, FlatList } from 'react-native';
 import React from 'react';
 import styles from './styles';
 import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { ArticleType } from '../typs';
+import { ArticleType } from '../typs/ArticleType';
+import { get } from '../utils/helpers/apiService';
 // import { NewsApiResponse, Article } from '../../types';
 
 
@@ -17,10 +17,10 @@ export default function TopNews(): React.JSX.Element {
 
     function getTopNews() {
         //from npm top headlines site git this key
-        const url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=0edf81f9b7fb4916a1e5a0f8960148c7';
+        const url = '/everything?q=bitcoin';
 
-        axios
-            .get(url)
+        
+            get(url)
             .then((responce) => {
                 //it is responce in register named data 
                 console.log(responce.data)

@@ -5,7 +5,9 @@ import { FlatList } from 'react-native';
 import axios from 'axios';
 const { width } = Dimensions.get('window');
 import { Alert } from 'react-native';
-import { ArticleType } from '../typs';
+import { ArticleType } from '../typs/ArticleType';
+import { get } from '../utils/helpers/apiService';
+;
 
 const news = [
     {
@@ -48,10 +50,10 @@ export default function MainNews() {
 
     function getTopNews() {
         //from npm top headlines site git this key
-        const url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=0edf81f9b7fb4916a1e5a0f8960148c7';
+        const url = '/top-headlines?country=us';
 
-        axios
-            .get(url)
+        
+            get(url)
             .then((responce) => {
                 //it is responce in register named data 
                 console.log(responce.data)
