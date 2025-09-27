@@ -5,6 +5,7 @@ import { FlatList } from 'react-native';
 import axios from 'axios';
 const { width } = Dimensions.get('window');
 import { Alert } from 'react-native';
+import { ArticleType } from '../typs';
 
 const news = [
     {
@@ -54,11 +55,11 @@ export default function MainNews() {
             .then((responce) => {
                 //it is responce in register named data 
                 console.log(responce.data)
-                const articles = responce.data?.articles;//?.filter(
-                // article =>article?.urlToImage!==NULL
-                //  ); 
+                const articles = responce.data?.articles?.filter(
+                    (article: ArticleType) => article?.urlToImage !== null,
+                 ); 
                 // ? safty is result == Null don't crush the app -opject structure-
-                // if no image filter it 
+                // if no image filter it ,In real app we will use place holder image
                 setTopNews(articles)
             })
             .catch((err) => {

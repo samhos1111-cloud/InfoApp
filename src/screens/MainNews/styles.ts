@@ -2,7 +2,7 @@ import { Dimensions, StyleSheet } from "react-native";
 
 export default StyleSheet.create({
     container: {
-        // marginHorizontal: 10,
+        marginHorizontal: 10,
         borderRadius: 20,
         overflow: 'hidden',
         width :355,
