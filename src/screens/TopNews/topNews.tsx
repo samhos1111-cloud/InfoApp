@@ -1,9 +1,12 @@
-import { View, Text, Image, FlatList } from 'react-native';
+import { View, Text, Image, FlatList, TouchableOpacity } from 'react-native';
 import React from 'react';
 import styles from './styles';
 import { useState, useEffect } from 'react';
 import { ArticleType } from '../typs/ArticleType';
 import { get } from '../utils/helpers/apiService';
+import { NavigationProp, useNavigation } from '@react-navigation/native';
+import { MainStackParamList } from '../../Navigation/mainStack';
+import screenNames from '../../Navigation/screenNames';
 // import { NewsApiResponse, Article } from '../../types';
 
 
@@ -15,6 +18,8 @@ export default function TopNews(): React.JSX.Element {
         getTopNews();
     }, [])
 
+    const navigation = useNavigation<NavigationProp<MainStackParamList>>();
+    
     function getTopNews() {
         //from npm top headlines site git this key
         const url = '/everything?q=bitcoin';
@@ -36,15 +41,22 @@ export default function TopNews(): React.JSX.Element {
             })
     }
 
+    function gotoArticleDetails(article: ArticleType) {
+        navigation.navigate({ name: screenNames.articleDetails, params: { article } });
+    }
+
     function renderItem(item: ArticleType) {
         return (
-            <View style={styles.cardCont}>
+            <TouchableOpacity style={styles.cardCont} onPress={()=> gotoArticleDetails(item)}>
+            {/* <View style={styles.cardCont}> */}
+
                 <Image
                     style={styles.cardArticelImage}
                     source={{ uri: item.urlToImage }}
-                />
+                    />
                 <Text style={styles.cardArticleName}>{item.title} </Text>
-            </View >
+            {/* </View> */}
+            </TouchableOpacity >
         );
     }
     return (

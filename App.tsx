@@ -1,15 +1,17 @@
 // npx react-native run-android
 
 import React from "react";
-import {StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import HomeScreen from "./src/screens/HomeScreen/HomeScreen";
+import { NavigationContainer } from "@react-navigation/native";
+import MainStake from "./src/Navigation/mainStack";
 
 function App(): React.JSX.Element {
   return (
-    <SafeAreaView>
-      <HomeScreen/>
-    </SafeAreaView>
+      <NavigationContainer>
+        <MainStake />
+      </NavigationContainer>
 
 
 
@@ -29,14 +31,14 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 20,
-    color: "#000", 
+    color: "#000",
     paddingLeft: 20
   },
 });
 
 export default App;
 
-//cd /d f:\MyProjects\InfoApp
+// cd /d f:\MyProjects\InfoApp
 // npx react-native start --reset-cache
 // npx react-native start
 // adb devices
