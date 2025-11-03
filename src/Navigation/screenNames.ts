@@ -6,5 +6,8 @@ enum screenNames {
     LoginScreen="LoginScreen",
     favoriteArticlesScreen="FavoriteArticlesScreen", 
     favoriteArticles = "favoriteArticles",
+
+    //sittings Screen
+    SettingScreen="SettingScreen",
 }
 export default screenNames;    

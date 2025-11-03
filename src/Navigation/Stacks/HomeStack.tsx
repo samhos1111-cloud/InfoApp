@@ -3,17 +3,18 @@ import loginScreen from '../../screens/loginScreen/LoginSc';
 import screenNames from '../screenNames';
 import ArticleDetails from '../../screens/ArticalDetails/ArticleDetails';
 import HomeScreen from '../../screens/HomeScreen/HomeScreen';
+import SettingScreen from '../../screens/SettingScreen/SettingScreen';
 
 
 const Stack = createStackNavigator();
 
 export default function HomeStack() {
-    return(
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name={screenNames.HomeScreen} component={HomeScreen} />
+    return (
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen name={screenNames.HomeScreen} component={HomeScreen} />
+            <Stack.Screen name={screenNames.SettingScreen} component={SettingScreen} />
+            {/* <Stack.Screen name={screenNames.ArticleDetails} component={ArticleDetails} /> */}
 
-        {/* <Stack.Screen name={screenNames.ArticleDetails} component={ArticleDetails} /> */}
-        
-    </Stack.Navigator>
+        </Stack.Navigator>
     )
 }
