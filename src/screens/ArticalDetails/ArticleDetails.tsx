@@ -6,6 +6,8 @@ import screenNames from '../../Navigation/screenNames';
 import styles from './styles';
 import { ScrollView } from 'react-native-gesture-handler';
 //import { Image } from 'react-native/types_generated/index';
+import icon from 'react-native-vector-icons/AntDesign';
+import Icon from 'react-native-vector-icons/AntDesign';
 
 export default function ArticleDetails(): React.JSX.Element {
 
@@ -19,7 +21,8 @@ export default function ArticleDetails(): React.JSX.Element {
             <ScrollView style={styles.container}>
                 <View style={styles.header}>
                     <TouchableOpacity style={styles.backBtn} onPress={() => goBack()}>
-                        <Text style={styles.goBackText}> Go Back</Text>
+                        {/* <Text style={styles.goBackText}> Go Back</Text> */}
+                        <Icon name='back' size={20} color='#fbff01ff' /> 
                     </TouchableOpacity>
                 </View>
 

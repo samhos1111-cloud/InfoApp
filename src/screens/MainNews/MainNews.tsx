@@ -10,13 +10,14 @@ import { get } from '../utils/helpers/apiService';
 import {NavigationProp, useNavigation} from '@react-navigation/native';
 import screenNames from '../../Navigation/screenNames';
 import { MainStackParamList } from '../../Navigation/mainStack';
+import StackNames from '../../Navigation/Stacks/StackNames';
 
 
 
 export default function MainNews() {
 
     const [topNews, setTopNews] = useState([]); // news--not any -- <any[]>([])
-    const navigation = useNavigation<NavigationProp<MainStackParamList, screenNames.homescreen>>();
+    const navigation = useNavigation<any>();
 
     // useEffect(() => {
     //     Alert.alert('welcome from main news') ////alert only ??
@@ -48,7 +49,10 @@ export default function MainNews() {
     }
 
     function gotoArticleDetails(article: ArticleType) {
-        navigation.navigate({ name: screenNames.articleDetails, params: { article } });
+navigation.navigate(StackNames.SheardStack, {
+  screen: screenNames.ArticleDetails,
+  params: { article},
+});
     }
     function renderNews(item: any) {
         return (

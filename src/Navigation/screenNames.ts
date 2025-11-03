@@ -1,5 +1,10 @@
 enum screenNames {
-    homescreen="Home",
-    articleDetails="ArticleDetails"
+    HomeScreen="Home",
+    ArticleDetails="ArticleDetails",
+
+    //Auth Stack
+    LoginScreen="LoginScreen",
+    favoriteArticlesScreen="FavoriteArticlesScreen", 
+    favoriteArticles = "favoriteArticles",
 }
 export default screenNames;    

@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { fonts } from '../utils/helpers/constans';
 
 export default StyleSheet.create({
     safeContainer: {
@@ -15,7 +16,7 @@ export default StyleSheet.create({
         paddingVertical:15,
     },
     backBtn: {
-        backgroundColor:'lightgray',
+        backgroundColor:'#d006f899',
         padding:10,
         borderRadius:5,
         alignSelf:'flex-start',
@@ -32,11 +33,14 @@ export default StyleSheet.create({
         paddingHorizontal:16,
     },
     title: {
-        fontWeight:'bold',
+        // fontWeight:'bold',
         fontSize:24,
         marginBottom:10,
+        fontFamily:fonts.CairoBold,
     },
-    describetion: {},
+    describetion: {
+        fontFamily:fonts.CairoLigh,
+    },
 
 
 });

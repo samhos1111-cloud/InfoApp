@@ -7,6 +7,7 @@ import { get } from '../utils/helpers/apiService';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
 import { MainStackParamList } from '../../Navigation/mainStack';
 import screenNames from '../../Navigation/screenNames';
+import stackNames from '../../Navigation/Stacks/StackNames';
 // import { NewsApiResponse, Article } from '../../types';
 
 
@@ -42,7 +43,13 @@ export default function TopNews(): React.JSX.Element {
     }
 
     function gotoArticleDetails(article: ArticleType) {
-        navigation.navigate({ name: screenNames.articleDetails, params: { article } });
+        // navigation.navigate({ name: screenNames.ArticleDetails, params: { article } });
+        (navigation as any).navigate(stackNames.SheardStack, 
+            {screen :stackNames.ArticleDetails,
+                params :{
+                  article: article , 
+                 }
+            });
     }
 
     function renderItem(item: ArticleType) {
